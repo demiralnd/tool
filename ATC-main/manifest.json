@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Div Ekleme Uzantısı",
+  "version": "1.0",
+  "description": "Bu uzantı bir web sayfasına div ekler.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webNavigation",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://adsmanager.facebook.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://adsmanager.facebook.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/um.png"
+    }
+  },
+  "icons": {
+    "16": "images/um.png"
+  }
+}
